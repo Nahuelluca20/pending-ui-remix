@@ -1,3 +1,5 @@
+import { CodeBlock, atomOneDark } from "react-code-blocks";
+
 export function headers({
   loaderHeaders,
   parentHeaders,
@@ -48,6 +50,27 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <div
+        style={{
+          fontFamily: "Fira Code",
+        }}
+      >
+        <CodeBlock
+          text={`import { CodeBlock, nord} from 'react-code-blocks';
+            const MyCodeComponent = () => (
+              <CodeBlock
+                text="HELLO WORLD"
+                theme={nord}
+                language="text"
+              />
+            )`}
+          theme={atomOneDark}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLongLines={true}
+          codeBlockStyle={true}
+        />
+      </div>
     </main>
   );
 }
