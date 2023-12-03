@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { cssBundleHref } from "@remix-run/css-bundle";
 import {
   Links,
   LiveReload,
@@ -9,6 +10,8 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/react/dist/routeModules";
 
+import styles from "./globals.css";
+
 export const meta: MetaFunction = () => [
   {
     charset: "utf-8",
@@ -16,10 +19,10 @@ export const meta: MetaFunction = () => [
     viewport: "width=device-width,initial-scale=1",
   },
 ];
-
-import styles from "./global.css";
-
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+];
 
 export default function App() {
   return (
@@ -28,7 +31,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-fira">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

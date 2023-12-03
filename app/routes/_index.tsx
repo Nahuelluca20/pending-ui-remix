@@ -1,3 +1,4 @@
+import { Button } from "~/components/ui/button";
 import { CodeBlock, atomOneDark } from "react-code-blocks";
 
 export function headers({
@@ -19,51 +20,19 @@ export function headers({
 
 export default function Index() {
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <main className="max-w-[1200px] mx-auto">
       <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer noopener"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer noopener"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer noopener"
-          >
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-      <div
-        style={{
-          fontFamily: "Fira Code",
-        }}
-      >
+
+      {/* <div className="w-[500px] font-fira font-bold">
         <CodeBlock
           text={`import { CodeBlock, nord} from 'react-code-blocks';
-            const MyCodeComponent = () => (
-              <CodeBlock
-                text="HELLO WORLD"
-                theme={nord}
-                language="text"
-              />
-            )`}
+const MyCodeComponent = () => (
+  <CodeBlock
+    text="HELLO WORLD"
+    theme={nord}
+    language="text"
+  />
+)`}
           theme={atomOneDark}
           language={"jsx"}
           showLineNumbers={false}
@@ -71,6 +40,8 @@ export default function Index() {
           codeBlockStyle={true}
         />
       </div>
+      <Button>Click me</Button>
+      <Button>Click me</Button> */}
     </main>
   );
 }
